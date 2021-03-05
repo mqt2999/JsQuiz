@@ -1,0 +1,95 @@
+
+
+
+#highScoreLink{
+
+    background-color: red;
+    width:30%;
+    
+}
+.headerBox{
+
+    padding:5%;
+    background-color: grey;
+    border-radius: 5px;
+   
+}
+
+#titleOpage{
+    
+    font-weight:bolder;
+    font-size: 190%;
+    right:20px;
+}
+.quizWindow{
+
+    background-color:aqua;
+    display: flex;
+    flex-direction: column;
+    
+}
+#highScoreLink{
+
+    position: relative;
+    left:40px;
+}
+#question{
+
+    position: relative;
+    left:20%;
+    text-indent:20px;
+    width:70%;
+    
+}
+#answerBox{
+
+    position:relative;
+    right:-30%;
+    margin-top:5%;
+    
+}
+
+.btn{
+
+    width:50%;
+    margin:5px;
+    background-color: orange;
+
+}
+#startBox{
+
+    display:flex;
+    position:relative;
+    bottom:10px;
+    left:500px;
+}
+#startGame{
+
+    background-color: blueviolet;
+    color: aqua;
+    font-weight: 600;
+    font-size: 30px;
+    
+}
+#highScoreList{
+
+    display: flex;
+    position: relative;
+    bottom:40px;
+    left:60px;
+    background-color: grey;
+    width:27%;
+   justify-content: center;
+  
+}
+.hide{
+    display: none;
+}
+#hide{
+
+    display: none;
+}
+#show{
+
+    display: visible;
+}
