@@ -18,7 +18,10 @@ var questions = [{
         { text: "both", correct: false },
         { text: "neither", correct: false },
         { text: "none of the above", correct: false }
-    ]
+    ],
+    getAnswer: function () {
+
+    }
 }]
 
 var questioneBoxEl = document.getElementById('questionBox')
@@ -33,95 +36,99 @@ var a4 = document.getElementById('answer4')
 var timeTxt = document.getElementById('timer');
 var highScoreBox = document.getElementById('highScoreList')
 var startBtn = document.getElementById('startBox')
-var timeLeft=3;
+var timeLeft = 20;
 var score = 6;
-var q=0;
+var q = 0;
+var j = 0;
 
 
 
+document.getElementById('startGame').addEventListener('click', function startGame() {
 
-document.getElementById('startGame').addEventListener('click',function startGame() {
-
-    highScoreBox.setAttribute("id","hide")
-    startBtn.setAttribute("id","hide")
+    highScoreBox.setAttribute("id", "hide")
+    startBtn.setAttribute("id", "hide")
     answerBoxEl.classList.remove('hide')
     questioneBoxEl.classList.remove('hide')
     timeTxt.classList.remove('hide')
     console.log("whaaaaahhhhhtttt")
-    
+
+
     getQuestion()
+    answers()
 
-    //hide the start button and show the quiz qestions
+    timer()
 
-    selectAnswers(q)
-
-    boxValue()
-
-    // timer()
-
-    change()
 
 })
 
 
 
-answerBtnEl.forEach(item => {
-    item.addEventListener('click', () => {
-      
-        boxValue()
-    })
-  })
+a1.addEventListener('click', (event) => {
 
-function boxValue() {
+        if (value === 'true') {
+            q++
+            j++
+            answers()
+            getQuestion()
 
-a1.value = questions[q].answers[0].correct
-a2.value = questions[q].answers[1].correct
-a3.value = questions[q].answers[2].correct
-a4.value = questions[q].answers[3].correct
+        }
+        else {
+            timeLeft -= 2
+            
+        }
+        
+    
+})
+
+
+function answers() {
+
+
+    a1.value = questions[q].answers[0].correct
+    a2.value = questions[q].answers[1].correct
+    a3.value = questions[q].answers[2].correct
+    a4.value = questions[q].answers[3].correct
+
+    a1.innerHTML = questions[q].answers[0].text
+    a2.innerHTML = questions[q].answers[1].text
+    a3.innerHTML = questions[q].answers[2].text
+    a4.innerHTML = questions[q].answers[3].text
 
 
 
 }
 
 function getQuestion(question) {
-
-    questionEl.innerHTML = questions[q].question
-
-}
-function selectAnswers(g) {
-
-    a1.innerHTML = questions[g].answers[0].text
-    a2.innerHTML = questions[g].answers[1].text
-    a3.innerHTML = questions[g].answers[2].text
-    a4.innerHTML = questions[g].answers[3].text
+questionEl.innerHTML = questions[j].question
 
 }
 
-function timer(){
 
-    setInterval( function () {
-        if(timeLeft == 0 ){ 
-            
-            timeTxt.setAttribute('style','display:none')
-            clearInterval(timeLeft =0)
+function timer() {
+
+    setInterval(function () {
+        if (timeLeft == 0) {
+
+            timeTxt.setAttribute('style', 'display:none')
+            clearInterval(timeLeft = 0)
             askForLet()
-            localStorage.setItem('score',score)
+            localStorage.setItem('score', score)
         }
-            timeLeft-=1
+        timeLeft -= 1
         timeTxt.textContent = timeLeft
-    },500);
+    }, 2000);
 }
 
-function askForLet(){
+function askForLet() {
     var ask = prompt("what are your initials?");
 
-    localStorage.setItem('personIntial',ask)
+    localStorage.setItem('personIntial', ask)
 }
 
-highScoreBtn.addEventListener("click",function (){
-    
-    highScoreBox.setAttribute("id","highScoreList")
-    startBtn.setAttribute("id","startbox")
+highScoreBtn.addEventListener("click", function () {
+
+    highScoreBox.setAttribute("id", "highScoreList")
+    startBtn.setAttribute("id", "startbox")
     answerBoxEl.classList.add('hide')
     questioneBoxEl.classList.add('hide')
     timeTxt.classList.add('hide')
