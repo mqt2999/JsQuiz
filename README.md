@@ -1,4 +1,4 @@
-# This is a a website that runs a simple JavaScript quiz. 
+# This is a website that runs a simple JavaScript quiz. 
 
 1. You are prompted with a last player and a start button 
 2. When the start button is clicked the page wil change and display a question and some answers and a timer will start
