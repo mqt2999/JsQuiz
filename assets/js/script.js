@@ -17,7 +17,7 @@ var j = 0;
 var clock = true;
 
 bringHome()
-lastPlayer()
+
 
 //this is a object made of an array with the question and answers for the quiz and displays them when one is added to an defined variable
 var questions = [{
