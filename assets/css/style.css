@@ -1,10 +1,23 @@
+.timer{
 
+    color:magenta;
+    position:fixed;
+    top: 250px;
+    left:30px;
+}
+.quizWindow{
 
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+}
 
-#highScoreLink{
+#lastScoreLink{
 
     background-color: red;
     width:30%;
+    position: relative;
+    left:40px;
     
 }
 .headerBox{
@@ -12,6 +25,7 @@
     padding:5%;
     background-color: grey;
     border-radius: 5px;
+    text-align:center;
    
 }
 
@@ -28,11 +42,7 @@
     flex-direction: column;
     
 }
-#highScoreLink{
 
-    position: relative;
-    left:40px;
-}
 #question{
 
     position: relative;
@@ -58,10 +68,12 @@
 }
 #startBox{
 
+    width:20%;
     display:flex;
     position:relative;
     bottom:10px;
-    left:500px;
+    left:60%;
+    justify-content: center;
 }
 #startGame{
 
@@ -71,7 +83,7 @@
     font-size: 30px;
     
 }
-#highScoreList{
+#lastScoreList{
 
     display: flex;
     position: relative;
